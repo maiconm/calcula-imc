@@ -9,6 +9,10 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.NumberFormat;
+import java.text.ParseException;
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
     EditText peso;
     EditText altura;
@@ -30,11 +34,18 @@ public class MainActivity extends AppCompatActivity {
 
     public void calcular(View v) {
         try {
-            Double valorPeso = Double.parseDouble(peso.getText().toString());
-            Double valorAltura = Double.parseDouble(altura.getText().toString());
-            Double imc = valorPeso / (Math.pow(valorAltura, 2));
-            imcResult.setText(imc.toString());
-        } catch (NumberFormatException ex) {
+            NumberFormat nf = NumberFormat.getNumberInstance(Locale.getDefault());
+            Double valorPeso = nf.parse(peso.getText().toString()).doubleValue();
+            Double valorAltura = nf.parse(altura.getText().toString()).doubleValue();
+            Double result;
+            if (Locale.getDefault().getLanguage() == "en") {
+                result = (valorPeso * 703) / (Math.pow(valorAltura, 2));
+            } else {
+                result = valorPeso / (Math.pow(valorAltura, 2));
+            }
+            imcResult.setText(nf.format(result));
+
+        } catch (ParseException ex) {
             ex.printStackTrace();
             Toast.makeText(this, R.string.informe_valores_validos, Toast.LENGTH_SHORT).show();
         }
@@ -44,6 +55,6 @@ public class MainActivity extends AppCompatActivity {
     public void limpar(View v) {
         peso.getText().clear();
         altura.getText().clear();
-        imcResult.setText("0.0");
+        imcResult.setText(R.string.zeros);
     }
 }

@@ -5,6 +5,8 @@
     <string name="imc">IMC:</string>
     <string name="calcular">Calcular</string>
     <string name="limpar">Limpar</string>
-    <string name="seu_peso">seu peso</string>
+    <string name="seu_peso">seu peso em kg</string>
     <string name="informe_valores_validos">Informe valores validos</string>
+    <string name="zeros">0,0</string>
+    <string name="em_cm">em cm</string>
 </resources>

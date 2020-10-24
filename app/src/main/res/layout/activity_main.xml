@@ -23,7 +23,7 @@
         android:text="@string/altura" />
 
     <EditText
-        android:hint="em cm"
+        android:hint="@string/em_cm"
         android:inputType="phone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="0.0"
+        android:text="@string/zeros"
         android:id="@+id/imcResult"/>
     <LinearLayout
         android:layout_width="match_parent"

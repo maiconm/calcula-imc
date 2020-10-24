@@ -6,6 +6,8 @@
     <string name="imc">BMI:</string>
     <string name="calcular">Calculate</string>
     <string name="limpar">Clear</string>
-    <string name="seu_peso">Your weight</string>
-    <string name="informe_valores_validos">Type valid values</string>
+    <string name="seu_peso">Your weight lbs</string>
+    <string name="informe_valores_validos">Enter valid values</string>
+    <string name="zeros">0.0</string>
+    <string name="em_cm">in inches</string>
 </resources>
