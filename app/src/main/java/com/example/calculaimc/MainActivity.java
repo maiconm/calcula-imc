@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             imcResult.setText(imc.toString());
         } catch (NumberFormatException ex) {
             ex.printStackTrace();
-            Toast.makeText(this, "Informe valores validos", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.informe_valores_validos, Toast.LENGTH_SHORT).show();
         }
 
     }
@@ -44,6 +44,6 @@ public class MainActivity extends AppCompatActivity {
     public void limpar(View v) {
         peso.getText().clear();
         altura.getText().clear();
-        imcResult.setText("");
+        imcResult.setText("0.0");
     }
 }
